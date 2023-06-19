@@ -44,7 +44,6 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
-
 ## Test
 
 ```bash
@@ -57,16 +56,31 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+## Running Docker Container
+```bash
+# Build container
+$ docker build -t <image_name> .
 
-## Support
+# Run container
+$ docker run -p 3000:3000 <image_name>
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Few other useful commands
+$ docker ps                # List running containers
+$ docker ps -a             # List all containers (including stopped ones)
+$ docker start <container_id>     # Start a stopped container
+$ docker stop <container_id>      # Stop a running container
+$ docker restart <container_id>   # Restart a container
+$ docker logs <container_id>      # Fetch the logs of a container
+$ docker exec -it <container_id> bash  # Run an interactive shell inside a container
+$ docker cp <container_id>:<source_path> <destination_path>  # Copy files/folders from a container to the host machine
+$ docker cp <source_path> <container_id>:<destination_path>  # Copy files/folders from the host machine to a container
+$ docker rm <container_id>     # Remove a container
+$ docker images             # List available images on your system
+$ docker pull <image_name>    # Pull an image from a registry
+$ docker inspect <name_or_id>   # Display detailed information about a container or image
+$ docker network ls          # List Docker networks
+$ docker volume ls           # List Docker volumes
+```
 
 ## License
 
